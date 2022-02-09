@@ -28,13 +28,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link active">
+                            <a href="{{ url('/') }}" class="nav-link active">
                                 <i class="nav-icon far fa-file"></i>
                                 <p>File</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
+                            <a href="{{ url('/') }}" class="nav-link">
                                 <i class="nav-icon far fa-folder"></i>
                                 <p>Folder</p>
                             </a>
@@ -46,14 +46,14 @@
 
                 {{--<li class="nav-header">MULTI LEVEL EXAMPLE</li>--}}
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link"  id="ChangeFolderIcon">
                         {{--<i class="nav-icon fas fa-disc-drive"></i>--}}
                         {{--<i class="nav-icon fas fa-hdd"></i>--}}
-                        <i class="nav-icon far fa-folder"></i>
+                        <i class="nav-icon far fa-folder" id="folderOpenClose"></i>
                         {{--<i class="far fa-folder-open"></i>--}}
                         <p>
                             My Drive
-                            <i class="right fas fa-angle-left"></i>
+                            <i class="right fas fa-angle-left" ></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -91,12 +91,6 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Level 2</p>
-                            </a>
                         </li>
                     </ul>
                 </li>
@@ -172,3 +166,11 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+
+
+{{--<script>--}}
+    {{--function changeFontawesomeIcon(x) {--}}
+        {{--onclick="changeFontawesomeIcon(this)";--}}
+        {{--x.classList.toggle("fa-folder-open");--}}
+    {{--}--}}
+{{--</script>--}}
