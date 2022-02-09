@@ -16,13 +16,15 @@
 
         @yield('content')
 
+        <div class="padding-top"></div>
+
     </div>
+
 
     @include('file-manager.layouts.footer')
 
 </div>
 
 @include('file-manager.layouts.js')
-
 </body>
 </html>

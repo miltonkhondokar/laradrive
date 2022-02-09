@@ -2,6 +2,37 @@
 .padding-top{
     padding-top: 25px;
 }
+.pdf-file{
+    color: #B30B00;
+}
+.word-file{
+    color: #295598;
+}
+.excel-file{
+    color: #1E6D41;
+}
+.csv-file{
+    color: #1E6D41;
+}
+.powerpnt-file{
+    color: #D04324;
+}
+.audio-file{
+    color: #FB738E;
+}
+.video-file{
+    color: #8D2797;
+}
+.folder-color{
+    color: #FFD764;
+}
+.image-file{
+    color: #00A0E6;
+}
+.last-access-text-color{
+    color: #ada9a9;
+    font-size: 14px;
+}
 /*common style*/
 
 

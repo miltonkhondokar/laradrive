@@ -4,7 +4,7 @@
     <title>@yield('title')</title>
 
     <!-- fav icon -->
-    <link rel="icon" href="{{ asset('file-manager/dist/img/favicon-32x32.png') }}" type="image/gif" sizes="32x32">
+    <link rel="icon" href="{{ asset('file-manager/dist/img/favicon-96x96.png') }}" type="image/gif" sizes="32x32">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
