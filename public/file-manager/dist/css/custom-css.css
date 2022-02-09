@@ -1,3 +1,10 @@
+/*common style*/
+.padding-top{
+    padding-top: 25px;
+}
+/*common style*/
+
+
 /*drive logo style start*/
 #driveLogoTitle{
     color: #5f6368;
@@ -22,3 +29,37 @@
     background-color: rgba(0,0,0,.03);
 }
 /*recent file div style start*/
+
+/*file div style start*/
+#fileDiv{
+    min-height: 200px !important;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(0,0,0,.03);
+}
+/*file div style start*/
+
+#bodyLabel{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 0 8px;
+    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    padding-bottom: 16px;
+    color: #5f6368;
+    opacity: 1;
+}
+
+
+#customRibbon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: orange;
+    top: -5px;
+    left: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
