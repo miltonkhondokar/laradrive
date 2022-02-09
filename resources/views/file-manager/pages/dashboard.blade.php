@@ -13,7 +13,8 @@
 
         <div class="right-click-menu">
             <ul>
-                <li>Mark as important</li>
+                <li><i class="nav-icon far fa-star"></i><p>Mark as important</p></li>
+                <li><i class="nav-icon far fa-star"></i><p>Mark as important</p></li>
                 <li>Share</li>
                 <li>Copy To</li>
                 <li>Move To</li>

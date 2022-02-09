@@ -33,6 +33,22 @@
     color: #ada9a9;
     font-size: 14px;
 }
+
+
+.right-click-menu{
+    background-color: white;
+    width: 15%;
+    padding: 5px;
+
+}
+.right-click-menu p{
+    text-align: left;
+    padding-left: 25px;
+    margin-top: -23px;
+}
+.right-click-menu ul li{
+    list-style: none;
+}
 /*common style*/
 
 
