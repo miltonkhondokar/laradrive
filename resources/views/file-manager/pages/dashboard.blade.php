@@ -8,58 +8,134 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-6">
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h3>150</h3>
 
-                        <p>New Orders</p>
+
+
+
+            <div class="col-md-2 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                    <div class="card-header text-muted border-bottom-0">
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
+                    <div class="card-body pt-0">
+
+                        <div class="row" id="suggestDiv">
+                            <i class="nav-icon far fa-file fa-5x" style="margin: 0 auto !important; padding-top: 18px !important;"></i>
+                            <i class="fas fa-ellipsis-v" style="color: #bbbbbbed !important;"></i>
+                        </div>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <div class="card-footer">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-6">
-                <div class="small-box bg-success">
-                    <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                        <p>Bounce Rate</p>
+
+
+
+            <div class="col-md-2 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                    <div class="card-header text-muted border-bottom-0">
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
+                    <div class="card-body pt-0">
+
+                        <div class="row" id="suggestDiv">
+                            <i class="nav-icon far fa-file fa-5x" style="margin: 0 auto !important; padding-top: 18px !important;"></i>
+                            <i class="fas fa-ellipsis-v" style="color: #bbbbbbed !important;"></i>
+                        </div>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <div class="card-footer">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-6">
-                <div class="small-box bg-warning">
-                    <div class="inner">
-                        <h3>44</h3>
 
-                        <p>User Registrations</p>
+
+
+
+            <div class="col-md-2 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                    <div class="card-header text-muted border-bottom-0">
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
+                    <div class="card-body pt-0">
+
+                        <div class="row" id="suggestDiv">
+                            <i class="nav-icon far fa-file fa-5x" style="margin: 0 auto !important; padding-top: 18px !important;"></i>
+                            <i class="fas fa-ellipsis-v" style="color: #bbbbbbed !important;"></i>
+                        </div>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <div class="card-footer">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-6">
-                <div class="small-box bg-danger">
-                    <div class="inner">
-                        <h3>65</h3>
 
-                        <p>Unique Visitors</p>
+
+
+
+            <div class="col-md-2 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                    <div class="card-header text-muted border-bottom-0">
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
+                    <div class="card-body pt-0">
+
+                        <div class="row" id="suggestDiv">
+                            <i class="nav-icon far fa-file fa-5x" style="margin: 0 auto !important; padding-top: 18px !important;"></i>
+                            <i class="fas fa-ellipsis-v" style="color: #bbbbbbed !important;"></i>
+                        </div>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <div class="card-footer">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </div>
                 </div>
             </div>
+
+
+
+
+            <div class="col-md-2 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                    <div class="card-header text-muted border-bottom-0">
+                    </div>
+                    <div class="card-body pt-0">
+
+                        <div class="row" id="suggestDiv">
+                            <i class="nav-icon far fa-file fa-5x" style="margin: 0 auto !important; padding-top: 18px !important;"></i>
+                            <i class="fas fa-ellipsis-v" style="color: #bbbbbbed !important;"></i>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-2 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                    <div class="card-header text-muted border-bottom-0">
+                    </div>
+                    <div class="card-body pt-0">
+
+                        <div class="row" id="suggestDiv">
+                            <i class="nav-icon far fa-file fa-5x" style="margin: 0 auto !important; padding-top: 18px !important;"></i>
+                            <i class="fas fa-ellipsis-v" style="color: #bbbbbbed !important;"></i>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
         </div>
 
 

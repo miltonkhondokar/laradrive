@@ -1,0 +1,24 @@
+/*drive logo style start*/
+#driveLogoTitle{
+    color: #5f6368;
+    opacity: 1;
+    display: inline-block;
+    font-family: 'Product Sans',Arial,sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    padding-left: 8px;
+    position: relative;
+    top: -1.5px;
+    vertical-align: middle;
+}
+/*drive logo style end*/
+
+
+/*recent file div style start*/
+#suggestDiv{
+    min-height: 120px !important;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(0,0,0,.03);
+}
+/*recent file div style start*/

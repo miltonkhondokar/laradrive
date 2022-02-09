@@ -23,4 +23,6 @@
     <link rel="stylesheet" href="{{ asset('file-manager/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('file-manager/plugins/summernote/summernote-bs4.min.css') }}">
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{ asset('file-manager/dist/css/custom-css.css') }}">
 </head>
