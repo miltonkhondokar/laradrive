@@ -5,9 +5,25 @@
 
 
 @section('content')
+
+
     <hr style="margin-top: -5px !important;">
 <section class="content">
     <div class="container-fluid">
+
+        <div class="right-click-menu">
+            <ul>
+                <li>Mark as important</li>
+                <li>Share</li>
+                <li>Copy To</li>
+                <li>Move To</li>
+                <li>Delete</li>
+                <li>Rename</li>
+                <li>Download</li>
+                <li>View Details</li>
+            </ul>
+        </div>
+
 
         <div class="padding-top"></div>
         <h2 id="bodyLabel">Suggested</h2>
