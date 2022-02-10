@@ -5,15 +5,18 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="createFolderModuleTitle">New Folder</h5>
             </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="folder_name" name="folder_name" placeholder="Folder Name" style="border-radius: 20px !important; border: 2px solid #007BFF !important;">
+            <form class="form-horizontal" name="FolderCreateForm" id="FolderCreateForm" method="post" action="{{ url('/create_folder') }}" autocomplete="off">
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="folder_name" name="folder_name" placeholder="Folder Name" style="border-radius: 20px !important; border: 2px solid #007BFF !important;">
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                <button type="button" name="btn_folder_create" class="btn text-primary">Create</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                    <button type="submit" name="btn_folder_create" class="btn text-primary">Create</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

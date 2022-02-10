@@ -29,5 +29,6 @@
 </div>
 
 @include('file-manager.layouts.js')
+@include('file-manager.layouts.bootstrapValidator')
 </body>
 </html>

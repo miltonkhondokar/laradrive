@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="{{ asset('file-manager/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <!-- bootstrapvalidator -->
+    <link rel="stylesheet" href="{{ asset('file-manager/dist/css/bootstrapValidator.min.css') }}">
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ asset('file-manager/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- JQVMap -->

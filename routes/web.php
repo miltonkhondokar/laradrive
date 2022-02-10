@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FileManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('file-manager.pages.dashboard');
-});
+Route::get('/', [FileManagementController::class, 'index']);
+Route::post('/create_folder', [FileManagementController::class, 'store']);
+

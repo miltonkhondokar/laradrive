@@ -8,6 +8,8 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('file-manager/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- bootstrapvalidator -->
+<script src="{{ asset('file-manager/dist/js/bootstrapValidator.min.js') }}"></script>
 <!-- ChartJS -->
 <script src="{{ asset('file-manager/plugins/chart.js/Chart.min.js') }}"></script>
 <!-- Sparkline -->

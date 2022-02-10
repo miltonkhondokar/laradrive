@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FileManagementController extends Controller
 {
@@ -13,7 +13,7 @@ class FileManagementController extends Controller
      */
     public function index()
     {
-        //
+        return view('file-manager.pages.dashboard');
     }
 
     /**
@@ -34,7 +34,48 @@ class FileManagementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $maxFolderItemId = DB::select('select max(item_id) as max_item_id from tbl_folders');
+        $maxId =  $maxFolderItemId[0]->max_item_id+1;
+        echo '<pre>';
+        print_r($request->all());
+        print_r($maxFolderItemId);
+        echo '</pre>';
+        exit;
+        $validated = $request->validate([
+            'folder_name' => 'required|min:6|max:60|regex:/^[a-zA-Z0-9_\s]*$/',
+        ]);
+
+        $validated = $request->validate(
+            [
+                'folder_name' => 'required|max:60|regex:/^[a-zA-Z0-9_\s]*$/',
+            ],
+            [
+                'folder_name.required' => 'File name is required',
+                'folder_name.min' => 'The folder name has to be al least 6 chars long',
+                'folder_name.max' => 'The folder name has to be max 60 chars long',
+            ]
+        );
+
+        $query = DB::table('tbl_folders')->insert([
+            'item_id' => $maxId,
+            'folder_name' => $request->input('folder_name'),
+            'parent_status' => 1,
+            'child_status' => 0,
+            'sub_child_status' => 0,
+            'parent_item_id' => 0,
+            'status' => 1,
+            'serial' => 1.0000000001,
+            'created_by' => '',
+            'created_at' => date("Y-m-d H:i:s"),
+            'csrf_token' => $request->input('_token'),
+        ]);
+
+        if($query){
+            return back()->with('success','Folder Successfully');
+        }else{
+            return back()->with('fail','Something went wrong');
+        }
+
     }
 
     /**
