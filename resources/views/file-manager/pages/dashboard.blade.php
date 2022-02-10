@@ -33,6 +33,9 @@
                         Last Accessed - 52 mins ago
                     </div>
                 </div>
+                <div class="starred-wrapper">
+                    <div class="starred"><i class="far fa-star" aria-hidden="true"></i></div>
+                </div>
             </div>
 
 
@@ -50,6 +53,9 @@
                     <div class="card-footer  last-access-text-color">
                         Last Accessed - 52 mins ago
                     </div>
+                </div>
+                <div class="starred-wrapper">
+                    <div class="starred"><i class="far fa-star" aria-hidden="true"></i></div>
                 </div>
             </div>
 
@@ -69,6 +75,9 @@
                         Last Accessed - 52 mins ago
                     </div>
                 </div>
+                <div class="starred-wrapper">
+                    <div class="starred"><i class="far fa-star" aria-hidden="true"></i></div>
+                </div>
             </div>
 
 
@@ -86,6 +95,9 @@
                     <div class="card-footer  last-access-text-color">
                         Last Accessed - 52 mins ago
                     </div>
+                </div>
+                <div class="starred-wrapper">
+                    <div class="starred"><i class="far fa-star" aria-hidden="true"></i></div>
                 </div>
             </div>
 
@@ -106,6 +118,9 @@
                         Last Accessed - 52 mins ago
                     </div>
                 </div>
+                <div class="starred-wrapper">
+                    <div class="starred"><i class="far fa-star" aria-hidden="true"></i></div>
+                </div>
             </div>
 
 
@@ -125,6 +140,9 @@
                     <div class="card-footer  last-access-text-color">
                         Last Accessed - 52 mins ago
                     </div>
+                </div>
+                <div class="starred-wrapper">
+                    <div class="starred"><i class="far fa-star" aria-hidden="true"></i></div>
                 </div>
             </div>
 

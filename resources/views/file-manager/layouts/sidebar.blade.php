@@ -155,9 +155,8 @@
                         <p class="text">Storage</p>
                     </a>
                 </li>
-                <div class="progress" style="height: 5px !important; width: 80% !important;">
-                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
-                    </div>
+                <div class="progress"  style="height: 10px !important; width: 80% !important;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"  style="width: 20%;">25%</div>
                 </div>
                 <p><code>15 GB Used</code></p>
             </ul>
