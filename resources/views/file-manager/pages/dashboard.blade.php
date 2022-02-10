@@ -152,12 +152,14 @@
                         <li class="addToStarred"><a href="#"><i class="nav-icon far fa-star" aria-hidden="true" style="padding-right: 5px;"></i> Add to Starred</a></li>
                         <li class="rename" data-toggle="modal" data-target="#exampleModalCenter"><a href="#"><i class="nav-icon far fa-edit" aria-hidden="true" style="padding-right: 5px;"></i> Rename</a></li>
                         <li class="move"><a href="#"><i class="nav-icon fas fa-cut" aria-hidden="true" style="padding-right: 5px;"></i> Move to</a></li>
-                        <li class="download"  style="border-top: 1px solid lightgrey;"><a href="#"><i class="nav-icon fas fa-download" aria-hidden="true" style="padding-right: 5px;"></i> Download</a></li>
+                        <li class="download"  style="border-top: 1px solid rgba(0,0,0,0.08);"><a href="#"><i class="nav-icon fas fa-download" aria-hidden="true" style="padding-right: 5px;"></i> Download</a></li>
                         <li class="viewDetails"><a href="#"><i class="nav-icon fas fa-info-circle" aria-hidden="true" style="padding-right: 5px;"></i> View Details</a></li>
-                        <li class="trash"  style="border-top: 1px solid lightgrey;"><a href="#"><i class="nav-icon far fa-trash-alt" aria-hidden="true" style="padding-right: 5px;"></i> Remove</a></li>
+                        <li class="trash"  style="border-top: 1px solid rgba(0,0,0,0.08);"><a href="#"><i class="nav-icon far fa-trash-alt" aria-hidden="true" style="padding-right: 5px;"></i> Remove</a></li>
                     </ul>
                 </div>
             </div>
+
+
             <div class="col-sm-3">
                 <div class="info-box bg-light">
                     <i class="nav-icon fas fa-folder fa-4x folder-color" style="padding-left: 10px;"></i>
