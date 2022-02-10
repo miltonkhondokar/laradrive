@@ -18,6 +18,9 @@
 
         <div class="padding-top"></div>
 
+        @include('file-manager.layouts.create_file_modal')
+        @include('file-manager.layouts.create_folder_modal')
+
     </div>
 
 
