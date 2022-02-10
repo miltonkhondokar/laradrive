@@ -9,10 +9,10 @@
     color: #295598;
 }
 .excel-file{
-    color: #66cc33;
+    color: #46b90c;
 }
 .csv-file{
-    color: #66cc33;
+    color: #46b90c;
 }
 .powerpnt-file{
     color: #D04324;
@@ -127,27 +127,20 @@
 
 
 /*custom ribbon style start*/
-.starred-wrapper {
-    width: 85px;
-    height: 88px;
-    overflow: hidden;
+.customRibbon{
     position: absolute;
-    top:0px;
-    left: 7px;
+    border-top: 65px solid #FBBC05;
+    border-right: 75px solid transparent;
 }
-.starred {
-    color: #333;
-    text-align: center;
-    -webkit-transform: rotate(315deg) !important;;
-    -moz-transform:    rotate(315deg) !important;;
-    -ms-transform:     rotate(315deg) !important;;
-    -o-transform:      rotate(315deg) !important;
-    position: relative;
-    padding: 2px 0;
-    top: 9px;
-    left: -31px;
-    width: 120px;
-    background-color: #FBBC05;
-    color: #fff;
+
+.customRibbon i{
+    position: absolute;
+    margin-top: -55px;
+    padding-left: 10px;
+    font-size: 20px;
+    color: white;
 }
 /*custom ribbon style end*/
+
+
+
