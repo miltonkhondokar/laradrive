@@ -9,7 +9,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <div class="form-group">
+                    <input type="text" class="form-control" id="file_name" name="file_name" placeholder="File Name" style="border-radius: 20px !important; border: 2px solid #007BFF !important;">
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Cancel</button>
