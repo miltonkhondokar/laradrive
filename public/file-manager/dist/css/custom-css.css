@@ -61,6 +61,7 @@
 }
 /*recent file div style start*/
 
+
 /*file div style start*/
 #fileDiv{
     min-height: 200px !important;
@@ -68,8 +69,10 @@
     text-align: center;
     background-color: rgba(0,0,0,.03);
 }
-/*file div style start*/
+/*file div style end*/
 
+
+/*right click menu style start*/
 #bodyLabel{
     font-size: 14px;
     font-weight: 500;
@@ -119,8 +122,10 @@
     background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#5f87f8), color-stop(100%,#1d5df3));
     background-image:linear-gradient(to bottom, #5f87f8 0%,#1d5df3 100%);
 }
+/*right click menu style end*/
 
 
+/*custom ribbon style start*/
 .starred-wrapper {
     width: 85px;
     height: 88px;
@@ -130,7 +135,6 @@
     left: 7px;
 }
 .starred {
-    /*font: bold 15px sans-serif;*/
     color: #333;
     text-align: center;
     -webkit-transform: rotate(315deg) !important;;
@@ -145,3 +149,4 @@
     background-color: #ebb134;
     color: #fff;
 }
+/*custom ribbon style end*/
