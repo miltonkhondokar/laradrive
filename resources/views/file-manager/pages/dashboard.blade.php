@@ -11,6 +11,31 @@
 <section class="content">
     <div class="container-fluid">
 
+        <div class="col-6 msgDiv">
+            @if (session('error'))
+                <div class="alert alert-danger hide3">
+                    <?php echo session('error'); ?>
+                </div>
+            @endif
+
+            @if (session('success'))
+                <div class="alert alert-success hide3">
+                    {{ session('success') }}
+                </div>
+            @endif
+        </div>
+
+
+        @if (count($errors) > 0)
+            <div class = "alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
 
 
         <div class="padding-top"></div>

@@ -36,11 +36,11 @@ class FileManagementController extends Controller
     {
         $maxFolderItemId = DB::select('select max(item_id) as max_item_id from tbl_folders');
         $maxId =  $maxFolderItemId[0]->max_item_id+1;
-        echo '<pre>';
-        print_r($request->all());
-        print_r($maxFolderItemId);
-        echo '</pre>';
-        exit;
+//        echo '<pre>';
+//        print_r($request->all());
+//        print_r($maxFolderItemId);
+//        echo '</pre>';
+//        exit;
         $validated = $request->validate([
             'folder_name' => 'required|min:6|max:60|regex:/^[a-zA-Z0-9_\s]*$/',
         ]);
@@ -64,7 +64,7 @@ class FileManagementController extends Controller
             'sub_child_status' => 0,
             'parent_item_id' => 0,
             'status' => 1,
-            'serial' => 1.0000000001,
+            'serial' => 1.000001,
             'created_by' => '',
             'created_at' => date("Y-m-d H:i:s"),
             'csrf_token' => $request->input('_token'),
