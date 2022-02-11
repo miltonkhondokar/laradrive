@@ -8,15 +8,29 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" name="fileCreateForm" id="fileCreateForm" method="post" action="" autocomplete="off">
+                <div class="padding-top"></div>
+                <form class="form-horizontal" name="createFileModule" id="createFileModule" method="post" action="{{ url('/create-file') }}" autocomplete="off" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+
+                    <?php
+                        $parent_id = "";
+                        if(isset($parent_folder['parent_id'])){
+                            $parent_id = $parent_folder['parent_id'];
+                        }
+                    ?>
+
+
+                    <input type="hidden" id="parent_folder_id" name="parent_folder_id" value="{{ $parent_id }}">
+
                     <div class="modal-body">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="file_name" name="file_name" placeholder="File Name" style="border-radius: 20px !important; border: 2px solid #007BFF !important;">
+                            <input type="file" id="file_name" name="file_name">
                         </div>
                     </div>
+                    <div class="padding-top"></div>
                     <div class="modal-footer">
                         <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn text-primary">Create</button>
+                        <button type="submit" class="btn text-primary">Create</button>
                     </div>
                 </form>
             </div>

@@ -192,7 +192,7 @@
                         </div>
 
                     </div>
-                    <div id="contextMenu" class="context-menu" data-folderId="contextMenu_{{$key}}">
+                    <div id="contextMenu" class="context-menu">
                         <ul class="menu">
                             <li><a href="{{ url('file-explorer/'.Crypt::encryptString($folder['item_id']).'/'.Crypt::encryptString($folder['folder_name'])) }}"><i class="nav-icon far fa-folder-open" aria-hidden="true" style="padding-right: 5px;"></i> Open</a></li>
                             <li class="addToStarred"><a href="#"><i class="nav-icon far fa-star" aria-hidden="true" style="padding-right: 5px;"></i> Add to Starred</a></li>
@@ -341,23 +341,24 @@
     </div>
 
     <script>
-        document.querySelector(".box").addEventListener("contextmenu", function (e) {
-            e.preventDefault();
-            var contextMenu = document.querySelector(".context-menu");
-            posX = (e.clientX + 150 > document.documentElement.clientWidth) ? e.clientX - 150 : e.clientX,
-                posY = (e.clientY + 140 + 55 > document.documentElement.clientHeight) ? e.clientY - 140 : e.clientY;
-            contextMenu.style.top = posY + "px";
-            contextMenu.style.left = posX + "px";
-            contextMenu.classList.add("shown");
-        });
+
+            document.querySelector(".box").addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+                var contextMenu = document.querySelector(".context-menu");
+                posX = (e.clientX + 150 > document.documentElement.clientWidth) ? e.clientX - 150 : e.clientX,
+                    posY = (e.clientY + 140 + 55 > document.documentElement.clientHeight) ? e.clientY - 140 : e.clientY;
+                contextMenu.style.top = posY + "px";
+                contextMenu.style.left = posX + "px";
+                contextMenu.classList.add("shown");
+            });
 
 
-        document.addEventListener("click", function (e) {
-            var elems2hide = document.querySelectorAll(".shown");
-            for (var i = 0, length = elems2hide.length; i < length; i++) {
-                elems2hide[i].classList.remove("shown");
-            }
-        });
+            document.addEventListener("click", function (e) {
+                var elems2hide = document.querySelectorAll(".shown");
+                for (var i = 0, length = elems2hide.length; i < length; i++) {
+                    elems2hide[i].classList.remove("shown");
+                }
+            });
 
     </script>
 

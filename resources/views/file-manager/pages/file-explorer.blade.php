@@ -55,27 +55,70 @@
             </div>
 
 
+
+
+            <div class="padding-top"></div>
+            <h2 id="bodyLabel">Files</h2>
+            <div class="row">
+
+                @foreach($files as $key=> $file)
+
+                <div class="col-md-2 d-flex align-items-stretch flex-column">
+                    <div class="card bg-light d-flex flex-fill">
+                        <div class="card-header text-muted border-bottom-0">
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="row" id="fileDiv">
+                                <i class="nav-icon far fa-file-pdf fa-5x pdf-file" style="margin: 0 auto !important; padding-top: 60px !important;"></i>
+
+                            </div>
+                        </div>
+                        <div class="card-footer last-access-text-color">
+                            File Name - {{ $file['item_name'] }}<br>
+                            Created on - {{ $file['created_at'] }}
+                        </div>
+                    </div>
+                </div>
+
+                @endforeach
+
+
+
+
+            </div>
+
+
         </div>
 
         <script>
-            document.querySelector(".box").addEventListener("contextmenu", function (e) {
-                e.preventDefault();
-                var contextMenu = document.querySelector(".context-menu");
-                posX = (e.clientX + 150 > document.documentElement.clientWidth) ? e.clientX - 150 : e.clientX,
-                    posY = (e.clientY + 140 + 55 > document.documentElement.clientHeight) ? e.clientY - 140 : e.clientY;
-                contextMenu.style.top = posY + "px";
-                contextMenu.style.left = posX + "px";
-                contextMenu.classList.add("shown");
-            });
 
 
-            document.addEventListener("click", function (e) {
-                var elems2hide = document.querySelectorAll(".shown");
-                for (var i = 0, length = elems2hide.length; i < length; i++) {
-                    elems2hide[i].classList.remove("shown");
-                }
-            });
-console.log($(this).data("folderId"));
+//            $('.context-menu').each(function() {
+
+                document.querySelector(".box").addEventListener("contextmenu", function (e) {
+                    e.preventDefault();
+                    var contextMenu = document.querySelector(".context-menu");
+                    posX = (e.clientX + 150 > document.documentElement.clientWidth) ? e.clientX - 150 : e.clientX,
+                        posY = (e.clientY + 140 + 55 > document.documentElement.clientHeight) ? e.clientY - 140 : e.clientY;
+                    contextMenu.style.top = posY + "px";
+                    contextMenu.style.left = posX + "px";
+                    contextMenu.classList.add("shown");
+                });
+
+
+                document.addEventListener("click", function (e) {
+                    var elems2hide = document.querySelectorAll(".shown");
+                    for (var i = 0, length = elems2hide.length; i < length; i++) {
+                        elems2hide[i].classList.remove("shown");
+                    }
+                });
+//            });
+
+
+
+
+
+
 
         </script>
 

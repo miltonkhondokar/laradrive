@@ -19,16 +19,22 @@ class FileManagementController extends Controller
         $folders = json_decode(json_encode($fetchFolders), true);
         return view('file-manager.pages.dashboard',['folders' => $folders]);
     }
+
     public function fileExplorer($id,$fname)
     {
-
         $fid = Crypt::decryptString($id);
         $fname = Crypt::decryptString($fname);
         $data = array();
         $data['current_location'] = $fname;
-        $fetchFolders = DB::select('select * from tbl_folders where status=1');
+        $data['parent_id'] = $fid;
+        //fetch folders
+        $fetchFolders = DB::select('select * from tbl_folders where status = 1 and parent_item_id = '.$fid);
         $folders = json_decode(json_encode($fetchFolders), true);
-        return view('file-manager.pages.file-explorer',['parent_folder' => $data,'folders' => $folders]);
+
+        //files
+        $fetchFiles = DB::select('select * from tbl_items where status = 1 and folder_id = '.$fid);
+        $files = json_decode(json_encode($fetchFiles), true);
+        return view('file-manager.pages.file-explorer',['parent_folder' => $data,'folders' => $folders,'files' => $files]);
     }
 
     /**
@@ -82,25 +88,6 @@ class FileManagementController extends Controller
             $folderName =  $folder;
         }
 
-
-        $data = array(
-            'item_id' => $maxId,
-            'folder_name' => $folderName,
-            'parent_status' => 1,
-            'child_status' => 0,
-            'sub_child_status' => 0,
-            'parent_item_id' => 0,
-            'status' => 1,
-            'serial' => $maxSerial,
-            'created_by' => '',
-            'created_at' => date("Y-m-d H:i:s"),
-            'csrf_token' => $request->input('_token')
-        );
-
-//        echo '<pre>';
-//        print_r($data);
-//        echo '</pre>';
-//        exit;
         $query = DB::table('tbl_folders')->insert([
             'item_id' => $maxId,
             'folder_name' => $folderName,
@@ -119,6 +106,56 @@ class FileManagementController extends Controller
             return redirect()->back()->with('success', 'Created successfully!');
         }else{
             return redirect()->back()->with('error', 'Error during the creation!');
+        }
+
+    }
+    public function createFile(Request $request)
+    {
+
+
+
+        $validated = $request->validate(
+            [
+                'file_name' => 'required|file|mimes:doc,pdf,xls,ppt,mp3,gif,jpeg,jpg,png,txt,3gpp,3gp,mp4,mpeg,mpg,mov,webm,flv,avi,pptx,docx,xlsx|max:10000',
+            ],
+            [
+                'file_name.required' => 'File name is required',
+                'folder_name.max' => 'The folder name has to be max 10 mb',
+            ]
+        );
+
+        if($request->hasFile('file_name')){
+
+            //fetch max serial
+            $maxSerialQuery = DB::select('select max(serial) as max_serial from tbl_items');
+            $maxSerial =  $maxSerialQuery[0]->max_serial + .0000000001;
+
+
+            $file = $request->file('file_name');
+            $path = 'file-manager/uploads';
+            $file_name = date("YmdHis").'_'.$request->file('file_name')->getClientOriginalName();
+            $file->move($path,$file_name);
+            $item_path = $path.'/'.$file_name;
+
+        $query = DB::table('tbl_items')->insert([
+        'folder_id' => $request->parent_folder_id,
+            'item_name' => $request->file('file_name')->getClientOriginalName(),
+            'item_type' => $request->file('file_name')->getClientMimeType(),
+            'item_size' => $request->file('file_name')->getMaxFilesize(),
+            'item_path' => $item_path,
+            'status' => 1,
+            'serial' => $maxSerial,
+            'created_by' => '',
+            'created_at' => date("Y-m-d H:i:s"),
+            'csrf_token' => $request->input('_token')
+        ]);
+
+        }
+
+        if($query){
+            return redirect()->back()->with('success', 'File Uploaded successfully!');
+        }else{
+            return redirect()->back()->with('error', 'Error while file uploading!');
         }
 
     }
