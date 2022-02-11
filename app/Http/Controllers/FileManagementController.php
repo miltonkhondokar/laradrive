@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Crypt;
 
 class FileManagementController extends Controller
 {
@@ -14,13 +15,20 @@ class FileManagementController extends Controller
      */
     public function index()
     {
-        return view('file-manager.pages.dashboard');
-    }
-    public function fileExplorer()
-    {
         $fetchFolders = DB::select('select * from tbl_folders where status=1');
         $folders = json_decode(json_encode($fetchFolders), true);
-        return view('file-manager.pages.file-explorer',['folders' => $folders]);
+        return view('file-manager.pages.dashboard',['folders' => $folders]);
+    }
+    public function fileExplorer($id,$fname)
+    {
+
+        $fid = Crypt::decryptString($id);
+        $fname = Crypt::decryptString($fname);
+        $data = array();
+        $data['current_location'] = $fname;
+        $fetchFolders = DB::select('select * from tbl_folders where status=1');
+        $folders = json_decode(json_encode($fetchFolders), true);
+        return view('file-manager.pages.file-explorer',['parent_folder' => $data,'folders' => $folders]);
     }
 
     /**

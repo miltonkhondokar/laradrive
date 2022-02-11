@@ -1,11 +1,8 @@
 @extends('file-manager.master-layout')
-@section('title','File Explorer')
-@section('bread','Dashboard')
-@section('current_location','File Explorer')
-
+@section('title','Explorer')
+@section('current_location','Explorer')
 
 @section('content')
-
 
     <hr style="margin-top: -5px !important;">
     <section class="content">
@@ -78,7 +75,7 @@
                     elems2hide[i].classList.remove("shown");
                 }
             });
-
+console.log($(this).data("folderId"));
 
         </script>
 
