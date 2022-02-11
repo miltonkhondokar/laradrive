@@ -16,4 +16,5 @@ use App\Http\Controllers\FileManagementController;
 
 Route::get('/', [FileManagementController::class, 'index']);
 Route::post('/create_folder', [FileManagementController::class, 'store']);
+Route::get('/file-explorer', [FileManagementController::class, 'fileExplorer']);
 

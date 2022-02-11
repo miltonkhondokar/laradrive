@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 class FileManagementController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +15,12 @@ class FileManagementController extends Controller
     public function index()
     {
         return view('file-manager.pages.dashboard');
+    }
+    public function fileExplorer()
+    {
+
+//        return view('course/paid_inv',['data' => $data,'profile'=>$profile]);
+        return view('file-manager.pages.file-explorer');
     }
 
     /**
@@ -34,16 +41,8 @@ class FileManagementController extends Controller
      */
     public function store(Request $request)
     {
-        $maxFolderItemId = DB::select('select max(item_id) as max_item_id from tbl_folders');
-        $maxId =  $maxFolderItemId[0]->max_item_id+1;
-//        echo '<pre>';
-//        print_r($request->all());
-//        print_r($maxFolderItemId);
-//        echo '</pre>';
-//        exit;
-        $validated = $request->validate([
-            'folder_name' => 'required|min:6|max:60|regex:/^[a-zA-Z0-9_\s]*$/',
-        ]);
+        $folderName = "";
+        $maxId = "";
 
         $validated = $request->validate(
             [
@@ -56,24 +55,62 @@ class FileManagementController extends Controller
             ]
         );
 
-        $query = DB::table('tbl_folders')->insert([
+        //fetch and create item max id
+        $maxFolderItemId = DB::select('select max(item_id) as max_item_id from tbl_folders');
+        $maxId =  $maxFolderItemId[0]->max_item_id+1;
+
+        //fetch max serial
+        $maxSerialQuery = DB::select('select max(serial) as max_serial from tbl_folders');
+        $maxSerial =  $maxSerialQuery[0]->max_serial + .0000000001;
+
+        //fetch and create folder name if exists
+        $folder = $validated['folder_name'];
+        $fetchFolderName = DB::select('select folder_name from tbl_folders where folder_name="'.$folder.'"');
+
+        //create new folder name if exists
+        if(!empty($fetchFolderName)){
+        $folderName =  $fetchFolderName[0]->folder_name.'_'.date("YmdHis");
+        }else{
+            $folderName =  $folder;
+        }
+
+
+        $data = array(
             'item_id' => $maxId,
-            'folder_name' => $request->input('folder_name'),
+            'folder_name' => $folderName,
             'parent_status' => 1,
             'child_status' => 0,
             'sub_child_status' => 0,
             'parent_item_id' => 0,
             'status' => 1,
-            'serial' => 1.000001,
+            'serial' => $maxSerial,
+            'created_by' => '',
+            'created_at' => date("Y-m-d H:i:s"),
+            'csrf_token' => $request->input('_token')
+        );
+
+//        echo '<pre>';
+//        print_r($data);
+//        echo '</pre>';
+//        exit;
+        $query = DB::table('tbl_folders')->insert([
+            'item_id' => $maxId,
+            'folder_name' => $folderName,
+            'parent_status' => 1,
+            'child_status' => 0,
+            'sub_child_status' => 0,
+            'parent_item_id' => 0,
+            'status' => 1,
+            'serial' => $maxSerial,
             'created_by' => '',
             'created_at' => date("Y-m-d H:i:s"),
             'csrf_token' => $request->input('_token'),
         ]);
 
         if($query){
-            return back()->with('success','Folder Successfully');
+            return redirect()->back()->with('success', 'Created successfully!');
         }else{
-            return back()->with('fail','Something went wrong');
+            return redirect()->back()->with('error', 'Error during the creation!');
         }
 
     }

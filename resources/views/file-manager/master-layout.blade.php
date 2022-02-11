@@ -4,8 +4,8 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-    @include('file-manager.layouts.preloader')
-
+{{--    @include('file-manager.layouts.preloader')--}}
+    @include('sweetalert::alert')
     @include('file-manager.layouts.nav')
 
     @include('file-manager.layouts.sidebar')
