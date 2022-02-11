@@ -22,22 +22,22 @@
                 {{--</div>--}}
             {{--@endif--}}
 
-
-
             <div class="padding-top"></div>
             <h2 id="bodyLabel">Folders</h2>
             <div class="row">
+
+                @foreach($folders as $key=> $folder)
 
                 <div class="col-sm-3 box">
                     <div class="info-box bg-light">
                         <i class="nav-icon fas fa-folder fa-4x folder-color" style="padding-left: 10px;"></i>
                         <div class="info-box-content" style="overflow: hidden;">
-                            <span class="info-box-text text-left text-muted"style="padding-left: 10px;">Test Folder</span>
+                            <span class="info-box-text text-left text-muted"style="padding-left: 10px;">{{ $folder['folder_name'] }}</span>
                             <span class="info-box-number text-left text-muted mb-0"style="padding-left: 10px;"></span>
                         </div>
 
                     </div>
-                    <div id="contextMenu" class="context-menu">
+                    <div id="contextMenu" class="context-menu" data-folderId="contextMenu_{{$key}}">
                         <ul class="menu">
                             <li><a href="{{ url('file-explorer') }}"><i class="nav-icon far fa-folder-open" aria-hidden="true" style="padding-right: 5px;"></i> Open</a></li>
                             <li class="addToStarred"><a href="#"><i class="nav-icon far fa-star" aria-hidden="true" style="padding-right: 5px;"></i> Add to Starred</a></li>
@@ -51,39 +51,9 @@
                         </ul>
                     </div>
                 </div>
+                @endforeach
 
 
-                <div class="col-sm-3">
-                    <div class="info-box bg-light">
-                        <i class="nav-icon fas fa-folder fa-4x folder-color" style="padding-left: 10px;"></i>
-                        <div class="info-box-content" style="overflow: hidden;">
-                            <span class="info-box-text text-left text-muted"style="padding-left: 10px;">Test Folder</span>
-                            <span class="info-box-number text-left text-muted mb-0"style="padding-left: 10px;"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-3">
-                    <div class="info-box bg-light">
-                        <i class="nav-icon fas fa-folder fa-4x folder-color" style="padding-left: 10px;"></i>
-                        <div class="info-box-content" style="overflow: hidden;">
-                            <span class="info-box-text text-left text-muted"style="padding-left: 10px;">Test Folder</span>
-                            <span class="info-box-number text-left text-muted mb-0"style="padding-left: 10px;"></span>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-3">
-                    <div class="info-box bg-light">
-                        <i class="nav-icon fas fa-folder fa-4x folder-color" style="padding-left: 10px;"></i>
-                        <div class="info-box-content" style="overflow: hidden;">
-                            <span class="info-box-text text-left text-muted"style="padding-left: 10px;">Test Folder</span>
-                            <span class="info-box-number text-left text-muted mb-0"style="padding-left: 10px;"></span>
-                        </div>
-
-                    </div>
-                </div>
 
             </div>
 

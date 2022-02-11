@@ -18,9 +18,9 @@ class FileManagementController extends Controller
     }
     public function fileExplorer()
     {
-
-//        return view('course/paid_inv',['data' => $data,'profile'=>$profile]);
-        return view('file-manager.pages.file-explorer');
+        $fetchFolders = DB::select('select * from tbl_folders where status=1');
+        $folders = json_decode(json_encode($fetchFolders), true);
+        return view('file-manager.pages.file-explorer',['folders' => $folders]);
     }
 
     /**
